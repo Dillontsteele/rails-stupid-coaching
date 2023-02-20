@@ -1,0 +1,32 @@
+<div>
+  <% if params[:question] == "I am going to work right now" %>
+    <div class="question">
+      <p class="user_answer"><%= params[:question] %></p>
+      <p class="user"><%= "- You" %></p>
+    </div>
+    <div class="answer">
+      <p class="coach_answer"><%= "Great!" %></p>
+      <p class="coach"><%= "- Your coach" %></p>
+  </div>
+  <% elsif params[:question].end_with?("?") %>
+    <div class="question">
+      <p class="user_answer"><%= params[:question] %></p>
+      <p class="user"><%= "- You" %></p>
+    </div>
+    <div class="answer">
+      <p class="coach_answer"><%= "Silly question, get dressed and go to work!" %></p>
+      <p class="coach"><%= "- Your coach" %></p>
+    </div>
+  <% else %>
+    <div class="question">
+      <p class="user_answer"><%= params[:question] %></p>
+      <p class="user"><%= "- You" %></p>
+    </div>
+    <div class="answer">
+      <p class="coach_answer"><%= "I don't care, get dressed and go to work!" %></p>
+      <p class="coach"><%= "- Your coach" %></p>
+    </div>
+  <% end %>
+</div>
+
+<p class="link"><%= link_to "Ask a new question", ask_path %></p>
